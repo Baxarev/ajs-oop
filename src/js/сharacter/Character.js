@@ -1,15 +1,6 @@
 export default class Character {
   constructor(name, type) {
-    const classes = [
-      "Bowerman",
-      "Swordsman",
-      "Magician",
-      "Daemon",
-      "Undead",
-      "Zombie",
-    ];
-
-    if (!classes.some((i) => i === type))
+    if (this.constructor.name !== type)
       throw new Error("Введите подходящий класс");
     if (name.length < 2 || name.length > 10)
       throw new Error("Имя должно быть от 2 до 10 символов");
